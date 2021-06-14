@@ -1,3 +1,4 @@
 {
-  "build": { "dockerfile": "Dockerfile" }
+  "image": "cs50/ide:latest",
+  "runArgs": ["--entrypoint", "/bin/bash"]
 }
