@@ -1,4 +1,7 @@
 {
   "image": "cs50/ide:latest",
-  "runArgs": ["--entrypoint", "/bin/bash"]
+  "runArgs": ["--entrypoint", "/bin/bash"],
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "tmux"
+  }
 }
