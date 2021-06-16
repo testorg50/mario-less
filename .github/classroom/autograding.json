@@ -1,0 +1,9 @@
+{
+  "tests": [
+    {
+      "name": "Check run",
+      "timeout": 1,
+      "points": 10
+    }
+  ]
+}
