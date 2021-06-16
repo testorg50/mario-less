@@ -1,19 +1,22 @@
 name: mario/less tests
 on: [push]
 jobs:
-  Test-Mario-Less:
+  Autograding:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: docker://cs50/ide:checks
+    - name: "Run tests"
+      uses: docker://cs50/ide:checks
       id: run_checks
       with:
-        entrypoint: /run_check50.sh
+        entrypoint: /autograde.sh
         check50_args: "cs50/problems/2021/x/mario/less"
       env:
         CHECK50_PATH: /tmp/check50
-    - run: |
-        mkdir -p .github/classroom
-        echo '${{ steps.run_checks.outputs.results }}' | \
-          jq '.results | map({"name": .description, "run": .passed | tostring, "points": 1}) | {"tests": .}' > .github/classroom/autograding.json
-    - uses: education/autograding@v1
+    - name: "Write autograding.json"
+      run: |
+        CLASSROOM_DIR=".github/classroom"
+        mkdir -p "$CLASSROOM_DIR"
+        echo '${{ steps.run_checks.outputs.results }}' > "$CLASSROOM_DIR"/autograding.json
+    - name: "Render results"
+      uses: education/autograding@v1
