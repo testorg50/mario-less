@@ -6,6 +6,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: docker://cs50/ide:checks
+      id: run_checks
       with:
         entrypoint: /run_check50.sh
         check50_args: "cs50/problems/2021/x/mario/less"
