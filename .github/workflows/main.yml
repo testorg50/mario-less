@@ -13,4 +13,5 @@ jobs:
     #     CHECK50_PATH: /tmp/check50
     - run: |
         mkdir -p .github/classroom
+        jq --version
     - uses: education/autograding@v1
