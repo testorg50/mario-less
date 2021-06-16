@@ -13,5 +13,5 @@ jobs:
     #     CHECK50_PATH: /tmp/check50
     - run: |
         mkdir -p .github/classroom
-        jq '.results | map({"name": .description, "run": .passed, "points": 1}) | {"tests": .}' ./results.json
+        jq '.results | map({"name": .description, "run": .passed, "points": 1}) | {"tests": .}' ./results.json > .github/classroom/autograding.json
     - uses: education/autograding@v1
