@@ -8,6 +8,6 @@ jobs:
     - uses: docker://cs50/ide:checks
       with:
         entrypoint: /run_check50.sh
-        check50_args: "--local cs50/problems/2021/x/mario/less"
+        check50_args: "--local --output=json cs50/problems/2021/x/mario/less"
       env:
         CHECK50_PATH: /tmp/check50
