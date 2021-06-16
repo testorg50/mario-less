@@ -2,9 +2,7 @@
   "tests": [
     {
       "name": "Check run",
-      "run": "true",
-      "timeout": 1,
-      "points": 10
+      "run": "true"
     }
   ]
 }
