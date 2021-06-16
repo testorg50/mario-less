@@ -8,10 +8,11 @@ jobs:
     - uses: docker://cs50/ide:checks
       with:
         entrypoint: /run_check50.sh
-        check50_args: "--local --output=json --output-file=results.json cs50/problems/2021/x/mario/less"
+        check50_args: "cs50/problems/2021/x/mario/less"
       env:
         CHECK50_PATH: /tmp/check50
     - run: |
         mkdir -p .github/classroom
-        jq '.results | map({"name": .description, "run": .passed | tostring, "points": 1}) | {"tests": .}' ./results.json > .github/classroom/autograding.json
+        echo "${{ steps.run_checks.outputs.results}}" | \
+          jq '.results | map({"name": .description, "run": .passed | tostring, "points": 1}) | {"tests": .}' > .github/classroom/autograding.json
     - uses: education/autograding@v1
