@@ -11,4 +11,7 @@ jobs:
     #     check50_args: "--local --output=json --output-file=results.json cs50/problems/2021/x/mario/less"
     #   env:
     #     CHECK50_PATH: /tmp/check50
+    - run: |
+      mkdir -p .github/classroom
+      jq '.results | map({"name": .description, "run": .passed, "points": 1}) | {"tests": .}' ./results.json > .github/classroom/autograding.json
     - uses: education/autograding@v1
