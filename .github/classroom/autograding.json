@@ -1,8 +1,7 @@
 {
   "tests": [
     {
-      "name": "Check run",
-      "run": "true"
+      "name": "Check run"
     }
   ]
 }
