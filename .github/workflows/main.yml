@@ -6,7 +6,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: "Run tests"
-      uses: docker://cs50/ide:checks
+      uses: docker://cs50/codespace:latest
       id: run_tests
       with:
         entrypoint: /autograde.sh
