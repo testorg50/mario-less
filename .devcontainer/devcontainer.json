@@ -1,6 +1,5 @@
 {
-  "image": "cs50/ide:latest",
-  "runArgs": ["--entrypoint", "/bin/bash"],
+  "image": "cs50/codespace:latest",
   "settings": {
     "terminal.integrated.profiles.linux": {
       "bash (login)": {
