@@ -4,4 +4,5 @@
 int main(void)
 {
     // TODO
+    printf("test\n");
 }
