@@ -10,7 +10,7 @@ jobs:
       id: run_tests
       with:
         entrypoint: /autograde.sh
-        check50_args: "cs50/problems/2021/x/mario/less"
+        check50_args: "cs50/problems/2021/x/hello"
       env:
         CHECK50_PATH: /tmp/check50
     - name: "Write autograding.json"
