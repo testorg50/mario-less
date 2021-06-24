@@ -1,6 +1,7 @@
 {
   "image": "cs50/codespace:latest",
   "settings": {
+    "git.enabled": false,
     "terminal.integrated.profiles.linux": {
       "bash (login)": {
         "path": "bash",
